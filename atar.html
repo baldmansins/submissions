@@ -5,53 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon</title>
     <style>
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
+            overflow: hidden;
             font-family: 'Arial', sans-serif;
+            background: black;
             color: white;
             text-align: center;
-            overflow: hidden;
-            background: #0d0d24;
         }
 
-        /* Starry Background */
-        .stars {
-            position: fixed;
+        .stars, .shooting-stars {
+            position: absolute;
             width: 100%;
             height: 100%;
-            background: url('https://i.imgur.com/5v8n7os.png') repeat;
-            animation: twinkle 100s linear infinite;
+            background: black;
         }
 
-        /* Shooting Stars Animation */
-        .shooting-star {
-            position: absolute;
-            width: 3px;
-            height: 60px;
-            background: white;
-            opacity: 0;
-            transform: rotate(-45deg);
-            animation: shooting 4s linear infinite;
+        .stars {
+            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
         }
 
-        @keyframes shooting {
-            0% { opacity: 0; transform: translate(100vw, -100vh) rotate(-45deg); }
-            10% { opacity: 1; }
-            100% { opacity: 0; transform: translate(-10vw, 110vh) rotate(-45deg); }
+        .shooting-stars {
+            animation: animateStars 10s linear infinite;
         }
 
-        /* Generate Multiple Shooting Stars */
-        .shooting-star:nth-child(2) { animation-delay: 1s; }
-        .shooting-star:nth-child(3) { animation-delay: 2s; }
-        .shooting-star:nth-child(4) { animation-delay: 3s; }
-        .shooting-star:nth-child(5) { animation-delay: 4s; }
+        @keyframes animateStars {
+            from { background-position: 0 0; }
+            to { background-position: -1000px 1000px; }
+        }
 
-        /* Glowing Text */
         .container {
             position: absolute;
             top: 50%;
@@ -60,51 +43,33 @@
         }
 
         h1 {
-            font-size: 4rem;
+            font-size: 3rem;
             text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-            animation: glow 2s ease-in-out infinite alternate;
         }
 
-        @keyframes glow {
-            from { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
-            to { text-shadow: 0 0 30px rgba(255, 255, 255, 1); }
-        }
-
-        /* Button Styling */
         .button {
             display: inline-block;
-            padding: 12px 24px;
+            padding: 10px 20px;
             background: rgba(255, 255, 255, 0.2);
             color: white;
-            border-radius: 8px;
+            border-radius: 5px;
             text-decoration: none;
-            font-size: 1.2rem;
-            transition: background 0.3s ease, transform 0.2s ease;
+            margin-top: 20px;
+            transition: background 0.3s ease;
         }
 
         .button:hover {
             background: rgba(255, 255, 255, 0.5);
-            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
-
-    <!-- Star Background -->
     <div class="stars"></div>
-    
-    <!-- Shooting Stars -->
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
+    <div class="shooting-stars"></div>
 
-    <!-- Coming Soon Content -->
     <div class="container">
         <h1>Coming Soon!</h1>
         <a href="index.html" class="button">Back to Home</a>
     </div>
-
 </body>
 </html>
