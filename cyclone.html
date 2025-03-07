@@ -19,6 +19,12 @@
             flex-direction: column;
         }
 
+        #timer {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
         h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
@@ -64,6 +70,7 @@
 </head>
 <body>
 
+    <div id="timer">00:00:00</div>
     <h1>Latest Cyclone Updates</h1>
     
     <div class="video-container">
@@ -74,6 +81,33 @@
         <button onclick="location.href='index.html'">Home</button>
         <button onclick="location.reload()">Update</button>
     </div>
+
+    <script>
+        function startTimer() {
+            const startTime = new Date();
+            startTime.setHours(21, 28, 27, 0); // Set start time to 9:28:27 PM
+
+            function updateTimer() {
+                const currentTime = new Date();
+                let elapsedSeconds = Math.floor((currentTime - startTime) / 1000);
+
+                let hours = Math.floor(elapsedSeconds / 3600);
+                let minutes = Math.floor((elapsedSeconds % 3600) / 60);
+                let seconds = elapsedSeconds % 60;
+
+                hours = String(hours).padStart(2, '0');
+                minutes = String(minutes).padStart(2, '0');
+                seconds = String(seconds).padStart(2, '0');
+
+                document.getElementById('timer').textContent = `${hours}:${minutes}:${seconds}`;
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        startTimer();
+    </script>
 
 </body>
 </html>
