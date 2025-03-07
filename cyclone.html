@@ -77,6 +77,31 @@
         button:hover {
             background: rgba(255, 255, 255, 0.4);
         }
+
+        /* Minibar Styling */
+        .minibar {
+            position: fixed;
+            top: 20px;
+            right: 0;
+            width: 250px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px 0 0 10px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+            font-size: 1.2rem;
+            text-align: left;
+        }
+
+        .minibar p {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .minibar .icon {
+            font-size: 1.5rem;
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -96,6 +121,12 @@
     <div class="buttons">
         <button onclick="location.href='index.html'">Home</button>
         <button onclick="location.reload()">Update</button>
+    </div>
+
+    <!-- Minibar -->
+    <div class="minibar">
+        <p>Current Category: Category 2 <span class="icon">🌀</span></p>
+        <p>Expected Wind Speeds: 120 - 140 km/h <span class="icon">💨</span></p>
     </div>
 
     <script>
