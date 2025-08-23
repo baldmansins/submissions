@@ -14,8 +14,8 @@ setTimeout(() => {
   setTimeout(() => {
     navbar.classList.add("show");
     container.classList.add("show");
-  }, 1500); // matches CSS fade-out duration
-}, 2500); // logo display duration (includes fade-in time)
+  }, 1500);
+}, 2500);
 
 // Countdown function
 function updateCountdown() {
@@ -32,9 +32,58 @@ function updateCountdown() {
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  countdownEl.innerHTML = 
-    `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
+// --- Review rotation ---
+const reviews = [
+  { text: "Best place to gain both weight and memories!", author: "Aditya L." },
+  { text: "The bulk has never been easier!", author: "Akein V." },
+  { text: "Maybe next time I'll manage to eat 50 McNuggest.", author: "Santana S." },
+  { text: "I can't wait for the next one to see Waniga again!.", author: "Mateo P." },
+  { text: "So many baddies attended!!", author: "Vibhor J." },
+  { text: "Loved eating all the halal foods and brawling Aditya!", author: "Sham S." },
+  { text: "Kept me fed for a week!!", author: "Aman S." },
+  { text: "Losing to Waniga on CR was a bummer but it was fun.", author: "Biman W." },
+  { text: "So much chicken to go around!!!", author: "Sharky." },
+  { text: "Simply wonderful, I loved how everyone got along!", author: "Divit C." },
+  { text: "I will never forget my first Waniga Feast.", author: "Semyon D." },
+  { text: "Enough food to feed all four of my beautiful girls!!", author: "Tyler H." },
+  { text: "It felt like Waniga was inside of me!!", author: "Jeremiah Potts." }
+];
+
+const reviewTextEl = document.getElementById("review-text");
+const reviewAuthorEl = document.getElementById("review-author");
+
+let lastIndex = -1;
+
+function showReview() {
+  // fade out
+  const reviewSection = document.getElementById("review-section");
+  reviewSection.style.opacity = 0;
+
+  setTimeout(() => {
+    let newIndex;
+    do {
+      newIndex = Math.floor(Math.random() * reviews.length);
+    } while (newIndex === lastIndex); // avoid repeating the last review
+
+    const review = reviews[newIndex];
+    reviewTextEl.textContent = `"${review.text}"`;
+    reviewAuthorEl.innerHTML = `<strong>- ${review.author}</strong>`;
+
+    // fade back in
+    reviewSection.style.opacity = 1;
+
+    lastIndex = newIndex;
+  }, 1000); // match fade duration
+}
+
+// Initial load
+showReview();
+setInterval(showReview, 5000);
+
+
