@@ -344,3 +344,161 @@ body {
         grid-template-columns: 1fr; /* single column on small screens */
     }
 }
+
+/* ----------------------------- */
+/* Attend Page */
+.attend-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 140px auto 50px auto; /* space for navbar */
+    text-align: center;
+    background: #fefeff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.attend-container h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.attend-container p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    background: #E1306C; /* Instagram pink */
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instagram-link i {
+    font-size: 1.3rem;
+}
+
+/* Hover effect */
+.instagram-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* ----------------------------- */
+/* Founder Page */
+.founder-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 140px auto 50px auto; /* space for navbar */
+    flex-wrap: wrap; /* responsive wrapping */
+}
+
+.founder-image {
+    flex: 1 1 300px;
+}
+
+.founder-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.founder-content {
+    flex: 1 1 400px;
+}
+
+.founder-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.founder-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ----------------------------- */
+/* Information Page Hero */
+.info-hero {
+    width: 90%;
+    max-width: 900px;
+    margin: 140px auto 50px auto; /* space for navbar */
+    text-align: center;
+}
+
+.info-hero h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.info-hero p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Info Cards */
+.info-cards {
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background: #fefeff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.info-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Hover effect on cards */
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .info-hero h1 {
+        font-size: 1.8rem;
+    }
+    .info-card h2 {
+        font-size: 1.3rem;
+    }
+}
