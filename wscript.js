@@ -43,7 +43,7 @@ const reviews = [
   { text: "Best place to gain both weight and memories!", author: "Aditya L." },
   { text: "The bulk has never been easier!", author: "Akein V." },
   { text: "Maybe next time I'll manage to eat 50 McNuggest.", author: "Santana S." },
-  { text: "I can't wait for the next one to see Waniga again!.", author: "Mateo P." },
+  { text: "I can't wait for the next one to see Waniga again!", author: "Mateo P." },
   { text: "So many baddies attended!!", author: "Vibhor J." },
   { text: "Loved eating all the halal foods and brawling Aditya!", author: "Sham S." },
   { text: "Kept me fed for a week!!", author: "Aman S." },
