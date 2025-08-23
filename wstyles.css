@@ -1,18 +1,18 @@
+/* ----------------------------- */
+/* General Body & Fonts */
+/* ----------------------------- */
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: #fbfcfb;
     font-family: 'Montserrat', sans-serif;
     color: #111;
-    overflow: hidden;
-    flex-direction: column;
+    overflow-x: hidden; /* prevent horizontal scroll */
   }
   
-  /* Logo screen */
+  /* ----------------------------- */
+  /* Logo Screen */
+  /* ----------------------------- */
   #logo-screen {
     position: fixed;
     top: 0;
@@ -34,7 +34,7 @@ body {
   }
   
   #logo-screen img {
-    max-width: 400px;  /* Bigger logo */
+    max-width: 400px;
     height: auto;
     opacity: 0;
     transform: scale(0.8);
@@ -52,23 +52,19 @@ body {
     }
   }
   
-  /* Navigation bar */
+  /* ----------------------------- */
+  /* Navbar */
+  /* ----------------------------- */
   #navbar {
     width: 100%;
-    background: #fbfcfb;
+    background: #fefeff;
     padding: 15px 0;
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 1.5s ease, transform 1.5s ease;
-    text-align: center;
     position: fixed;
     top: 0;
     left: 0;
-  }
-  
-  #navbar.show {
-    opacity: 1;
-    transform: translateY(0);
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
   
   #navbar ul {
@@ -76,13 +72,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 30px;
     margin: 0;
     padding: 0;
-    gap: 40px;
-  }
-  
-  #navbar ul li {
-    display: inline-block;
   }
   
   #navbar ul li.logo img {
@@ -101,41 +93,22 @@ body {
   #navbar ul li a:hover {
     color: #666;
   }
-
+  
+  /* ----------------------------- */
+  /* Countdown Section */
+  /* ----------------------------- */
   #countdown-container {
     text-align: center;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 1.5s ease, transform 1.5s ease;
-    margin-top: 80px; /* closer to top */
-  }
+    margin-top: 200px; /* increased from 120px to bring it more central */
+    }
   
   #countdown-container.show {
     opacity: 1;
     transform: translateY(0);
   }
-  
-  /* Review section */
-  /* Review section */
-  #review-section {
-  margin-top: 60px; /* slightly lower than before */
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  opacity: 1;
-  transition: opacity 1s ease; /* smooth fade effect */
-}
-
-#review-text {
-  font-style: italic;
-  margin-bottom: 10px;
-}
-
-#review-author {
-  font-weight: bold;
-}
   
   h1 {
     font-size: 2rem;
@@ -148,6 +121,126 @@ body {
     font-weight: 700;
     letter-spacing: 2px;
   }
-
-
+  
+  /* ----------------------------- */
+  /* Review Section */
+  /* ----------------------------- */
+  #review-section {
+    margin-top: 100px; /* increased from 60px to lower the reviews */
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+  
+  #review-text {
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  
+  #review-author {
+    font-weight: bold;
+  }
+  
+  /* ----------------------------- */
+  /* Our History Page */
+  /* ----------------------------- */
+  .history-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 120px auto 50px auto; /* space for navbar */
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+  
+  /* Countup section at top of entry */
+  .countup-section {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .countup-section p {
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-bottom: 5px; /* closer to countup */
+  }
+  
+  .countup {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 0;
+  }
+  
+  .countup-section small {
+    display: block;
+    color: #555;
+    margin-top: 3px;
+  }
+  
+  /* Each history entry wrapper with bottom border */
+  .history-entry {
+    padding-bottom: 40px;
+    border-bottom: 2px solid #111;
+  }
+  
+  .history-entry:last-child {
+    border-bottom: none;
+  }
+  
+  /* Content area: text + image */
+  .history-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  .history-entry.reverse .history-content {
+    flex-direction: row-reverse;
+  }
+  
+  /* Text info styling */
+  .history-info {
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .history-info h2 {
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+  }
+  
+  .history-info .meta-info {
+    color: #555;
+    font-weight: 500;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  
+  .history-info p.description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+  
+  /* Image styling */
+  .history-img {
+    flex: 1 1 400px;
+  }
+  
+  .history-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
   
