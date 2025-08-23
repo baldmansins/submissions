@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Information</title>
+  <link rel="stylesheet" href="wstyles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav id="navbar">
+    <ul>
+      <li><a href="our-story.html">Our Story</a></li>
+      <li><a href="our-history.html">Our History</a></li>
+      <li><a href="attend.html">Attend a WanigaFeast</a></li>
+      <li class="logo"><a href="index.html"><img src="wanigafeasts.png" alt="Waniga Feasts Logo"></a></li>
+      <li><a href="the-founder.html">The Founder</a></li>
+      <li><a href="information.html">Information</a></li>
+      <li><a href="blacklist.html">Blacklist</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="info-hero">
+    <h1>All You Need to Know</h1>
+    <p>Everything about Waniga Feasts, from how to attend to the rules and tips for a great experience.</p>
+  </div>
+
+  <!-- Info Cards -->
+  <div class="info-cards">
+    <div class="info-card">
+      <h2>What is a Waniga Feast?</h2>
+      <p>Waniga Feasts are community gatherings centered around food, stories, and connections. Enjoy a vibrant atmosphere where everyone shares meals and experiences together.</p>
+    </div>
+    <div class="info-card">
+      <h2>Rules & Guidelines</h2>
+      <p>Respect others, follow the safety instructions, and bring a positive attitude. These rules ensure everyone enjoys the feast safely and happily.</p>
+    </div>
+    <div class="info-card">
+      <h2>Tips for Attending</h2>
+      <p>Arrive early, bring your friends, and be ready to share and engage. Don’t forget to follow our Instagram for updates and sneak peeks of upcoming feasts!</p>
+    </div>
+  </div>
+
+  <script>
+    // Fade-in cards sequentially
+    const cards = document.querySelectorAll('.info-card');
+    cards.forEach((card, i) => {
+      card.style.opacity = 0;
+      card.style.transform = "translateY(20px)";
+      window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+          card.style.transition = "opacity 1s ease, transform 1s ease";
+          card.style.opacity = 1;
+          card.style.transform = "translateY(0)";
+        }, i * 300);
+      });
+    });
+  </script>
+</body>
+</html>
