@@ -1,5 +1,5 @@
 // Set your target date here
-const targetDate = new Date("2025-09-21T00:15:00").getTime();
+const targetDate = new Date("2026-06-29T00:15:00").getTime();
 
 const countdownEl = document.getElementById("countdown");
 const container = document.getElementById("countdown-container");
@@ -52,7 +52,10 @@ const reviews = [
   { text: "Simply wonderful, I loved how everyone got along!", author: "Divit C." },
   { text: "I will never forget my first Waniga Feast.", author: "Semyon D." },
   { text: "Enough food to feed all four of my beautiful girls!!", author: "Tyler H." },
-  { text: "It felt like Waniga was inside of me!!", author: "Jeremiah Potts." }
+  { text: "It felt like Waniga was inside of me!!", author: "Jeremiah Potts." },
+  { text: "POV: u put the fork down", author: "Ethan P." },
+  { text: "Lemme see you get hard", author: "Darren D." },
+  { text: "As I watched my beautiful Lankan friends stuff their faces with my handmade glizzies with onion and mustard, I think I felt true calm for the first time in a while. Life is a treacherous whirlwind yet here, well within the eye of the storm, we are able to find peace in each others presence. Long live Waniga. Long live the Glizzy.", author: "Divit C." }
 ];
 
 const reviewTextEl = document.getElementById("review-text");
